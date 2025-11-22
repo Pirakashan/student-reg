@@ -55,7 +55,7 @@
                     </div>
 
                     <div class="mb-3 form-check">
-                        <input type="checkbox" class="form-check-input" name="parttime">
+                        <input type="checkbox" class="form-check-input" name="parttime" value="1" >
                         <label class="form-check-label" for="parttime">Part-time Student</label>
                     </div>
 
@@ -70,11 +70,17 @@
             </div>
             <div class="col-6">
                 <h3>Registered Students</h3>
+                @if($students)
                 <ul class="list-group">
-                    <li class="list-group-item">John Doe - john@example.com - 2023-01-15</li>
-                    <li class="list-group-item">Jane Smith - jane@example.com - 2023-02-20</li>
-                    <li class="list-group-item">Alex Johnson - alex@example.com - 2023-03-25</li>
+                    @foreach($students as $student)
+                    <li class="list-group-item">{{$student->name}} - {{$student->email}} - {{$student->joined_date}}</li>
+                    @endforeach
                 </ul>
+                @else
+                <p>No students Data</p>
+                @endif
+
+
                 
             </div>
         </div>
