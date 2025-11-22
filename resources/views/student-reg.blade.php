@@ -14,6 +14,11 @@
         <div class="row bg-info py-5">
             <div class="col-6">
                 <h2>Registration</h2>
+                @if(session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success') }}
+                    </div>
+                @endif
                 <form action="/addstudent" method="post">
                     <div class="form-group">
                         <label for="name" class="form-label">Name:</label>
