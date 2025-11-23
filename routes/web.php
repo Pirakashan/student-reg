@@ -9,5 +9,6 @@ Route::get('/test', function () {
 
 
 
+
 Route::get('/', [studentController::class, 'viewForm'])->name('home'); 
 Route::post('/addstudent', [studentController::class, 'addstudent']);

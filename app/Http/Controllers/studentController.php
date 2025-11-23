@@ -16,10 +16,10 @@ class studentController extends Controller
     public function addstudent(Request $request){
        //dd($request->all()); 
        Student::create($request->all());
+ 
 
+return redirect()->route('home')->with('success', 'Student created successfully!');
+    }
 
-    
-    return redirect()->route('home')->with('success', 'Student created successfully!');
-     
-}
+   
 }
